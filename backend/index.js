@@ -41,7 +41,7 @@ client.connect();
 // Hämta alla blogginlägg
 app.get('/api/posts', async (req, res) => {
   try {
-    const { rows } = await client.query('SELECT * FROM posts'); // Ändra 'posts' till ditt faktiska tabellnamn
+    const { rows } = await client.query('SELECT * FROM posts ORDER BY created_at DESC');
     res.json(rows);
   } catch (error) {
     console.error('Fel vid hämtning av inlägg:', error);
@@ -53,7 +53,7 @@ app.get('/api/posts', async (req, res) => {
 app.get('/api/posts/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const { rows } = await client.query('SELECT * FROM posts WHERE id = $1', [id]); // Ändra 'posts' till ditt faktiska tabellnamn
+    const { rows } = await client.query('SELECT * FROM posts WHERE id = $1', [id]);
     if (rows.length > 0) {
       res.json(rows[0]);
     } else {
