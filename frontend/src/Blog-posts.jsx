@@ -23,16 +23,15 @@ function BlogPosts() {
   }, []);
 
   const handleDelete = (postId) => {
-    console.log("Deleting post with ID:", postId); // Kontrollera att rätt ID används
+    console.log("Deleting post with ID:", postId);
   
     axios.delete(`http://localhost:4000/api/posts/${postId}`)
       .then(() => {
-        // Filtrera bort endast det valda inlägget från `posts`-arrayen
         setPosts(posts.filter(post => post.id !== postId));
       })
       .catch(error => {
         console.error('Error deleting post:', error);
-        setError("Det gick inte att radera inlägget."); // Specificera meddelandet
+        setError("Det gick inte att radera inlägget.");
       });
   };
   
@@ -47,18 +46,17 @@ function BlogPosts() {
 
   const handleEdit = (postId) => {
     console.log(`Edit post with ID: ${postId}`);
-    navigate(`/edit/${postId}`); // Navigerar till redigeringssidan med postId
+    navigate(`/edit/${postId}`);
   };
 
   return (
     <div>
-    <h1>Blogginlägg</h1>
     {posts.map(post => (
   <Post
     key={post.id}
     title={post.title}
     content={post.content}
-    imageUrl={post.image_url} // skicka den specifika bild-URL:en
+    imageUrl={post.image_url}
     onEdit={() => handleEdit(post.id)}
     onDelete={() => handleDelete(post.id)}
   />

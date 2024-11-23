@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import './Header.css'; // Importera din CSS-fil här
+import './Navbar.css';
 
-function Header() {
+function Navbar() {
     return (
-        <nav className="navbar">
+        <nav className="navbar-menu">
             <ul className="nav-links">
                 <li>
                     <Link to="/">Hem</Link>
@@ -11,9 +11,15 @@ function Header() {
                 <li>
                     <Link to="/add">Lägg till inlägg</Link>
                 </li>
+                <li>
+                    <Link to="/about">Om oss</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Kontakt</Link>
+                </li>
             </ul>
         </nav>
     );
 }
 
-export default Header;
+export default Navbar;

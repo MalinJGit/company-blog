@@ -1,34 +1,20 @@
 .post-container {
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc; /* Samma som inläggen */
     border-radius: 5px;
-    background-color: #f9f9f9; /* Ljus bakgrund för inlägg */
+    border: 0.5px solid #ff9900;
   }
   
   .post-form {
     display: flex;
-    flex-direction: column; /* Ställer in fälten i en kolumn */
+    flex-direction: column;
   }
   
   .post-title, .post-content, .post-image-url {
-    margin-bottom: 15px; /* Utrymme mellan fälten */
-    padding: 10px; /* Utrymme inuti fälten */
-    border: 1px solid #ccc;
-    border-radius: 4px; /* Rundade hörn */
-  }
-  
-  .submit-button {
+    margin-bottom: 15px; 
     padding: 10px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #007bff; /* Blå knapp */
-    color: white;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3; /* Mörkare blå vid hover */
   }
 
   /* post-styling.css */
@@ -38,6 +24,8 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #ff9900;
+  max-width: 70%; 
 }
 
 h2 {
@@ -45,30 +33,33 @@ h2 {
 }
 
 img {
-  max-width: 100%; /* Gör så att bilden inte överskrider förälderns bredd */
-  height: auto; /* Bevara bildens proportioner */
-  margin: 10px 0; /* Lägg till lite marginal runt bilden */
+  max-width: 100%; 
+  height: auto; 
+  margin: 10px 0;
+  max-height: 500px;
 }
 
-/* Justering för EditPost-formuläret */
+
 .edit-post-container {
-  max-width: 600px;
-  margin: 20px auto; /* Centrera och ge lite marginal */
+  max-width: 800px;
+  margin: 20px auto; 
   padding: 20px;
-  background: #f9f9f9; /* Samma ljusa bakgrund som inläggen */
-  border: 1px solid #ccc; /* Konsistent kantlinje */
+  background: #f9f9f9; 
+  border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #ff9900;
 }
 
 .edit-post-form {
   display: flex;
   flex-direction: column;
+  max-width: 800px;
 }
 
 .edit-post-form label {
   font-weight: bold;
-  margin-bottom: 5px; /* Marginal för att separera label från input */
+  margin-bottom: 5px; 
 }
 
 .edit-post-input,
@@ -84,25 +75,20 @@ img {
 
 .edit-post-textarea {
   min-height: 100px;
-  resize: vertical; /* Tillåt vertikal ändring av textarea */
+  resize: vertical; 
 }
 
 .edit-post-button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff; /* Primär knappfärg */
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #BFEA9F;
+  color: rgb(60, 59, 59);
+  border: 0.5px solid #ff9900;
 }
 
-.edit-post-button:hover {
-  background-color: #0056b3;
+.edit-button {
+  background-color: #BFEA9F;
+  color: rgb(60, 59, 59);
+  border: 0.5px solid #ff9900;
 }
-
-/* post-styling.css */
 
 .add-post-form {
   display: flex;
@@ -110,9 +96,10 @@ img {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 0.5px solid #ff9900;
   border-radius: 5px;
   background-color: #f9f9f9;
+  margin-bottom: 30px;
 }
 
 .add-post-form input,
@@ -126,15 +113,9 @@ img {
 }
 
 .add-post-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
+  background-color: #BFEA9F;
+  color: rgb(60, 59, 59);
+  border: 0.5px solid #ff9900;
   cursor: pointer;
-}
-
-.add-post-form button:hover {
-  background-color: #0056b3;
 }
 
