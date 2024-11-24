@@ -9,6 +9,8 @@ function BlogPosts() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const backendUrl = 'https://company-blog.onrender.com';
+
   useEffect(() => {
     axios.get(`${backendUrl}/api/posts`)
       .then(response => {
