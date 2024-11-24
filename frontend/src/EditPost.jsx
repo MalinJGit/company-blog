@@ -86,10 +86,8 @@ function EditPost() {
           onChange={(e) => setPost({ ...post, content: e.target.value })} 
           required 
         />
-        <div className="button-container-edit">
         <button type="submit" className="edit-post-button">Spara</button>
-        <button type="delete-post-button" onclick={handleDelete}>Radera inlägg</button>
-        </div>
+        <button type="button" className="edit-delete-button" onclick={handleDelete}>Radera inlägg</button>
       </form>
     </div>
   );  

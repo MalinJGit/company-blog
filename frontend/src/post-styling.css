@@ -84,6 +84,12 @@ img {
   border: 0.5px solid #ff9900;
 }
 
+.edit-delete-button {
+  background-color: #BFEA9F;
+  color: rgb(60, 59, 59);
+  border: 0.5px solid #ff9900;
+}
+
 .edit-button {
   background-color: #BFEA9F;
   color: rgb(60, 59, 59);
