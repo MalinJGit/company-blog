@@ -10,7 +10,7 @@ app.use(express.json());
 
 // CORS-kod för att fixa CORS-problemet
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://localhost:5173', 'https://din-produktionsdomän.se'];
+  const allowedOrigins = ['http://localhost:5173', 'https://company-blog.onrender.com'];
   const origin = req.headers.origin;
 
   if (allowedOrigins.includes(origin)) {
