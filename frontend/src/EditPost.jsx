@@ -13,7 +13,7 @@ function EditPost() {
   const backendUrl = 'https://company-blog.onrender.com';
 
   useEffect(() => {
-    axios.get(`${backendUrl}/api/posts${postId}`)
+    axios.get(`${backendUrl}/api/posts/${postId}`)
       .then(response => {
         setPost(response.data);
         setLoading(false);
@@ -29,7 +29,7 @@ function EditPost() {
     e.preventDefault();
     setError(null); // Återställ eventuell tidigare error
 
-    axios.put(`${backendUrl}/api/posts${postId}`, post)
+    axios.put(`${backendUrl}/api/posts/${postId}`, post)
       .then(() => {
         navigate('/'); // Navigera tillbaka efter uppdatering
       })
