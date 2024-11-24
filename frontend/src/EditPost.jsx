@@ -12,6 +12,7 @@ function EditPost() {
 
   const backendUrl = 'https://company-blog.onrender.com';
 
+  //Hämta inlägg
   useEffect(() => {
     axios.get(`${backendUrl}/api/posts/${postId}`)
       .then(response => {
@@ -27,15 +28,29 @@ function EditPost() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(null); // Återställ eventuell tidigare error
+    setError(null); 
 
+    //Uppdatera inlägg
     axios.put(`${backendUrl}/api/posts/${postId}`, post)
       .then(() => {
-        navigate('/'); // Navigera tillbaka efter uppdatering
+        navigate('/'); 
       })
       .catch(error => {
         console.error('Error updating post:', error);
         setError("Det gick inte att uppdatera inlägget.");
+      });
+  };
+
+  const handleDelete = () => {
+    setError(null);
+
+    axios.delete(`${backendUrl}/api/posts/${postId}`)
+      .then(() => {
+        navigate('/'); // Navigera tillbaka efter radering
+      })
+      .catch(error => {
+        console.error('Error deleting post:', error);
+        setError("Det gick inte att radera inlägget.");
       });
   };
 
@@ -71,7 +86,10 @@ function EditPost() {
           onChange={(e) => setPost({ ...post, content: e.target.value })} 
           required 
         />
+        <div className="button-container-edit">
         <button type="submit" className="edit-post-button">Spara</button>
+        <button type="delete-post-button" onclick={handleDelete}>Radera inlägg</button>
+        </div>
       </form>
     </div>
   );  
