@@ -10,7 +10,7 @@ function BlogPosts() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/posts')
+    axios.get(`${backendUrl}/api/posts`)
       .then(response => {
         setPosts(response.data);
         setLoading(false);
@@ -25,7 +25,7 @@ function BlogPosts() {
   const handleDelete = (postId) => {
     console.log("Deleting post with ID:", postId);
   
-    axios.delete(`http://localhost:4000/api/posts/${postId}`)
+    axios.delete(`${backendUrl}/api/posts/${postId}`)
       .then(() => {
         setPosts(posts.filter(post => post.id !== postId));
       })

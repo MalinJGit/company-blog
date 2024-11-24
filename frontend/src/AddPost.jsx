@@ -15,7 +15,7 @@ function AddPost({ onPostAdded }) {
       image_url: imageUrl,
     };
 
-    axios.post('http://localhost:4000/api/posts', newPost)
+    axios.post(`${backendUrl}/api/posts`, newPost)
       .then((response) => {
         onPostAdded(response.data); // Call the function to update posts in App
         setTitle('');
