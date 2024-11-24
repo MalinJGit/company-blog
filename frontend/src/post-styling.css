@@ -81,6 +81,7 @@ img {
 .button-container-edit {
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
 .edit-post-button {
