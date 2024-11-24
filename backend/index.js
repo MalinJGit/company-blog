@@ -122,9 +122,13 @@ app.delete('/api/posts/:id', async (req, res) => {
   }
 });
 
+const path =require('path');
+
 // Serverinställningar
 app.use(express.static(path.join(path.resolve(), 'dist')));
 
-app.listen(4000, () => {
-  console.log('Redo på http://localhost:4000/');
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Servern körs på port: ${PORT}`);
 });
