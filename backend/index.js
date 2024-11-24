@@ -122,8 +122,6 @@ app.delete('/api/posts/:id', async (req, res) => {
   }
 });
 
-const path =require('path');
-
 // Serverinställningar
 app.use(express.static(path.join(path.resolve(), 'dist')));
 
