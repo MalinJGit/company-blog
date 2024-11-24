@@ -78,16 +78,23 @@ img {
   resize: vertical; 
 }
 
+.button-container-edit {
+  display: flex;
+  gap: 10px;
+}
+
 .edit-post-button {
   background-color: #BFEA9F;
   color: rgb(60, 59, 59);
   border: 0.5px solid #ff9900;
+  padding: 5px 10px;
 }
 
 .edit-delete-button {
   background-color: #BFEA9F;
   color: rgb(60, 59, 59);
   border: 0.5px solid #ff9900;
+  padding: 5px 10px;
 }
 
 .edit-button {
