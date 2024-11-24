@@ -46,7 +46,7 @@ function EditPost() {
 
     axios.delete(`${backendUrl}/api/posts/${postId}`)
       .then(() => {
-        navigate('/'); // Navigera tillbaka efter radering
+        navigate('/');
       })
       .catch(error => {
         console.error('Error deleting post:', error);
@@ -88,7 +88,7 @@ function EditPost() {
         />
         <div class="button-container-edit">
         <button type="submit" className="edit-post-button">Spara</button>
-        <button type="button" className="edit-delete-button" onclick={handleDelete}>Radera inlägg</button>
+        <button type="button" className="edit-delete-button" onClick={handleDelete}>Radera inlägg</button>
         </div>
       </form>
     </div>

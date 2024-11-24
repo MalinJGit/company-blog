@@ -23,19 +23,6 @@ function BlogPosts() {
         setLoading(false);
       });
   }, []);
-
-  const handleDelete = (postId) => {
-    console.log("Deleting post with ID:", postId);
-  
-    axios.delete(`${backendUrl}/api/posts/${postId}`)
-      .then(() => {
-        setPosts(posts.filter(post => post.id !== postId));
-      })
-      .catch(error => {
-        console.error('Error deleting post:', error);
-        setError("Det gick inte att radera inlägget.");
-      });
-  };
   
 
   if (loading) {

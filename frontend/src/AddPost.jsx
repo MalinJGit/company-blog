@@ -19,11 +19,14 @@ function AddPost({ onPostAdded }) {
 
     axios.post(`${backendUrl}/api/posts`, newPost)
       .then((response) => {
-        onPostAdded(response.data); // Call the function to update posts in App
+        onPostAdded(response.data);
         setTitle('');
         setContent('');
         setImageUrl('');
-      })
+
+      navigate('/');
+    })
+
       .catch((error) => {
         console.error('Error adding post:', error);
       });
