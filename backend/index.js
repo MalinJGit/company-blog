@@ -10,7 +10,7 @@ app.use(express.json());
 
 // CORS-kod för att fixa CORS-problemet
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://localhost:5173', 'https://company-blog.onrender.com'];
+  const allowedOrigins = ['https://company-blog.onrender.com'];
   const origin = req.headers.origin;
 
   if (allowedOrigins.includes(origin)) {
@@ -21,7 +21,6 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-  // Om det är en OPTIONS-begäran, skicka 200 som svar
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200);
   }

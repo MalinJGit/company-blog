@@ -23,7 +23,7 @@ function Main() {
   const isHomePage = location.pathname === '/';
   const [posts, setPosts] = useState([]);
 
-  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
+  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://company-blog.onrender.com';
 
   useEffect(() => {
     axios.get(`${backendUrl}/api/posts`)
@@ -46,9 +46,9 @@ function Main() {
         {isHomePage && <Header />}
         <h1 className="company-name">InnovativeX</h1>
         <Routes>
-          <Route path="/" element={<BlogPosts posts={posts} onEdit={handlePostAdded} />} /> {/* Startsidan med blogginlägg */}
-          <Route path="/add" element={<AddPost onPostAdded={handlePostAdded} />} /> {/* Lägg till inlägg */}
-          <Route path="/edit/:postId" element={<EditPost />} /> {/* Redigera inlägg */}
+          <Route path="/" element={<BlogPosts posts={posts} onEdit={handlePostAdded} />} />
+          <Route path="/add" element={<AddPost onPostAdded={handlePostAdded} />} /> 
+          <Route path="/edit/:postId" element={<EditPost />} />
         </Routes>
       </div>
       <Footer />
