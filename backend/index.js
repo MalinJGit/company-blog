@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 
 app.use('/Images', express.static(path.join(__dirname, 'Images')));
 
-// Anslut till PostgreSQL-databasen
+// Anslutning till PostgreSQL-databasen
 dotenv.config();
 const client = new Client({
   connectionString: process.env.PGURI
