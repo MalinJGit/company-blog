@@ -10,11 +10,9 @@ function EditPost() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const backendUrl = 'https://company-blog.onrender.com';
-
   //Hämta inlägg
   useEffect(() => {
-    axios.get(`${backendUrl}/api/posts/${postId}`)
+    axios.get(`/api/posts/${postId}`)
       .then(response => {
         setPost(response.data);
         setLoading(false);
@@ -31,7 +29,7 @@ function EditPost() {
     setError(null); 
 
     //Uppdatera inlägg
-    axios.put(`${backendUrl}/api/posts/${postId}`, post)
+    axios.put(`/api/posts/${postId}`, post)
       .then(() => {
         navigate('/'); 
       })
@@ -44,7 +42,7 @@ function EditPost() {
   const handleDelete = () => {
     setError(null);
 
-    axios.delete(`${backendUrl}/api/posts/${postId}`)
+    axios.delete(`/api/posts/${postId}`)
       .then(() => {
         navigate('/');
       })

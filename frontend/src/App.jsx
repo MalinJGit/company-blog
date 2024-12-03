@@ -23,10 +23,8 @@ function Main() {
   const isHomePage = location.pathname === '/';
   const [posts, setPosts] = useState([]);
 
-  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://company-blog.onrender.com';
-
   useEffect(() => {
-    axios.get(`${backendUrl}/api/posts`)
+    axios.get(`/api/posts`)
       .then((response) => {
         setPosts(response.data);
       })

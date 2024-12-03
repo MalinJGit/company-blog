@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const backendUrl = 'https://company-blog.onrender.com';
-
 function AddPost({ onPostAdded }) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -17,7 +15,7 @@ function AddPost({ onPostAdded }) {
       image_url: imageUrl,
     };
 
-    axios.post(`${backendUrl}/api/posts`, newPost)
+    axios.post(`/api/posts`, newPost)
       .then((response) => {
         onPostAdded(response.data);
         setTitle('');
